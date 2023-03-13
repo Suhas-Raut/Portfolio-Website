@@ -1,0 +1,184 @@
+body {
+  text-align: center;
+  font-family: "Merriweather", serif;
+}
+
+h1 {
+  font-size: 4.55rem;
+  line-height: 1.5;
+  font-weight: bold;
+  font-family: "Great Vibes", handwriting;
+  color: #66bfbf;
+}
+
+h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.5rem;
+  color: #66bfbf;
+  font-weight: normal;
+  padding-bottom: 10px;
+}
+
+h3, h4,
+a,
+p {
+  font-family: "Montserrat", sans-serif;
+  color: #11999e;
+}
+
+/* First Section */
+/* Navigation Bar */
+
+.navbar {
+  padding: 0 0 4.5rem;
+}
+
+.navbar-toggler {
+  background-color: #66bfbf;
+}
+
+.navbar-brand {
+  font-family: "Ubuntu";
+  font-size: 2rem;
+  font-weight: bold;
+  color: #66bfbf;
+}
+
+.nav-item {
+  padding: 0px 20px;
+}
+
+.nav-item a:hover,
+.nav-item a.active {
+  background: linear-gradient(to bottom, #2b9dca, #0f536e );
+  border-radius: 8px;
+  color: black;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  font-family: "Montserrat";
+  font-weight: 400;
+  color: #66bfbf;
+}
+
+.container-fluid {
+  padding: 2% 10% 0%;
+  background-image:linear-gradient(to bottom, #083344, #1a5d77) ;
+  text-align: center;
+  color: #66bfbf;
+}
+
+.upper_cloud {
+  margin-left: 60%;
+  padding-bottom: 2%;
+}
+
+.lower_cloud {
+  margin-right: 70%;
+}
+
+.mountain {
+  max-width: 80%;
+  margin: 20px 30px 0px;
+}
+
+/* Middle Section */
+.middle-container 
+{
+  background: linear-gradient(to bottom, #d3e4da, #dfa14b  );
+}
+.profile {
+  padding-top: 70px;
+  padding-bottom: 20px;  
+  background-image: linear-gradient(to bottom,  #1a4d2e, #132c1d);
+}
+
+.skills {
+  padding: 25px 0px;
+}
+
+.skills p {
+  color: black;
+}
+
+.skill-row {
+  width: 50%;
+  margin: 70px auto 100px auto;
+  text-align: left;
+  line-height: 2;
+  padding-bottom: 100px;
+}
+
+/* Image Section */
+
+.skill-img {
+  width: 25%;
+  float: left;
+  margin-right: 20px;
+}
+
+.tech-stack {
+  width: 50px;
+  padding-right: 10px;
+}
+
+.work-img {
+  width: 25%;
+  float: right;
+  margin-left: 20px;
+}
+
+/* Contact Me Section */
+.contact-me {
+  background-color: #000000;
+  padding: 100px 0px;
+}
+
+.contact-message {
+  width: 40%;
+  margin: 40px auto 60px;
+}
+
+
+/* Bottom Section */
+.bottom-container {
+  background-image: linear-gradient(to bottom, #00122e, #0064c2);
+  padding:20px 20px 10px 20px;
+}
+
+.bottom-container a {
+  text-decoration: none;
+  margin-right: 30px;
+  font-weight: bold;
+}
+
+.bottom-container p {
+  margin-top: 10px;
+  color: white;
+
+}
+
+.footer-link img {
+  margin: 10px 0px;
+  text-align: center;
+  width: 30px;
+}
+
+.bottom-container img:hover {
+  width: 2.4%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.contact-me button:hover {
+  background: linear-gradient(to bottom, #0064c2, #00122e);
+  
+
+}
+.contact-me button a:hover {
+  color: white;
+  
+}
