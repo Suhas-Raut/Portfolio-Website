@@ -1,184 +1,257 @@
+/* =============================
+   GLOBAL STYLES
+   ============================= */
+
+:root {
+  --primary: #66bfbf;
+  --secondary: #11999e;
+  --dark-bg: #0b1f29;
+  --glass-bg: rgba(255, 255, 255, 0.07);
+  --glass-border: rgba(255, 255, 255, 0.15);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   text-align: center;
   font-family: "Merriweather", serif;
+  background-color: #0a192f;
+  color: var(--primary);
+  overflow-x: hidden;
+}
+
+/* ANIMATIONS */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 h1 {
-  font-size: 4.55rem;
-  line-height: 1.5;
-  font-weight: bold;
-  font-family: "Great Vibes", handwriting;
-  color: #66bfbf;
+  font-size: 5rem;
+  font-family: "Great Vibes", cursive;
+  color: var(--primary);
+  animation: glowText 3s ease infinite alternate;
+}
+
+@keyframes glowText {
+  from { text-shadow: 0 0 10px #5fffff; }
+  to { text-shadow: 0 0 25px #00eaff; }
 }
 
 h2 {
   font-family: "Montserrat", sans-serif;
-  font-size: 2.5rem;
-  color: #66bfbf;
-  font-weight: normal;
-  padding-bottom: 10px;
+  font-size: 2.8rem;
+  color: var(--primary);
+  font-weight: 500;
 }
 
-h3, h4,
-a,
-p {
+h3, h4, a, p {
   font-family: "Montserrat", sans-serif;
-  color: #11999e;
+  color: var(--secondary);
 }
 
-/* First Section */
-/* Navigation Bar */
+/* =============================
+   NAVBAR
+   ============================= */
 
 .navbar {
-  padding: 0 0 4.5rem;
-}
-
-.navbar-toggler {
-  background-color: #66bfbf;
+  padding: 1rem 8%;
+  backdrop-filter: blur(12px);
+  background: var(--glass-bg);
+  border-bottom: 1px solid var(--glass-border);
 }
 
 .navbar-brand {
-  font-family: "Ubuntu";
   font-size: 2rem;
-  font-weight: bold;
-  color: #66bfbf;
+  color: var(--primary) !important;
+  letter-spacing: 1px;
+  transition: 0.3s ease;
 }
 
-.nav-item {
-  padding: 0px 20px;
+.navbar-brand:hover {
+  transform: scale(1.1);
+  text-shadow: 0 0 15px #00f2ff;
+}
+
+.nav-link {
+  color: var(--primary) !important;
+  font-size: 1.2rem;
+  margin: 0 10px;
+  transition: 0.3s;
 }
 
 .nav-item a:hover,
 .nav-item a.active {
-  background: linear-gradient(to bottom, #2b9dca, #0f536e );
-  border-radius: 8px;
-  color: black;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  padding: 6px 16px;
+  border-radius: 10px;
+  color: #fff !important;
+  box-shadow: 0 0 12px #00eaff;
 }
 
-.nav-link {
-  font-size: 1.2rem;
-  font-family: "Montserrat";
-  font-weight: 400;
-  color: #66bfbf;
-}
+/* =============================
+   TITLE SECTION
+   ============================= */
 
 .container-fluid {
-  padding: 2% 10% 0%;
-  background-image:linear-gradient(to bottom, #083344, #1a5d77) ;
-  text-align: center;
-  color: #66bfbf;
+  padding-top: 100px;
+  padding-bottom: 40px;
+  background: radial-gradient(circle at top, #05232e, #00111a);
 }
 
-.upper_cloud {
-  margin-left: 60%;
-  padding-bottom: 2%;
+.upper_cloud, .lower_cloud {
+  opacity: 0.8;
+  animation: floatCloud 6s ease-in-out infinite alternate;
 }
 
-.lower_cloud {
-  margin-right: 70%;
+@keyframes floatCloud {
+  from { transform: translateX(0); }
+  to { transform: translateX(40px); }
 }
 
 .mountain {
-  max-width: 80%;
-  margin: 20px 30px 0px;
+  width: 70%;
+  margin-top: 30px;
+  filter: drop-shadow(0 0 20px #003f4f);
 }
 
-/* Middle Section */
-.middle-container 
-{
-  background: linear-gradient(to bottom, #d3e4da, #dfa14b  );
+/* =============================
+   PROFILE SECTION
+   ============================= */
+
+.middle-container {
+  background: linear-gradient(to bottom, #dceef5, #ffe6b3);
 }
+
 .profile {
-  padding-top: 70px;
-  padding-bottom: 20px;  
-  background-image: linear-gradient(to bottom,  #1a4d2e, #132c1d);
+  padding: 80px 0;
+  background: linear-gradient(to bottom, #0d4030, #082418);
+  color: white;
 }
+
+.profile img {
+  border-radius: 50%;
+  width: 200px;
+  border: 4px solid var(--primary);
+  box-shadow: 0 0 30px #00eaff;
+  transition: 0.4s;
+}
+
+.profile img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 45px #00faff;
+}
+
+/* =============================
+   SKILLS SECTION
+   ============================= */
 
 .skills {
-  padding: 25px 0px;
-}
-
-.skills p {
-  color: black;
+  padding: 50px 0;
 }
 
 .skill-row {
-  width: 50%;
-  margin: 70px auto 100px auto;
+  width: 55%;
+  margin: 80px auto;
+  padding: 40px;
+  background: var(--glass-bg);
+  border-radius: 20px;
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(10px);
   text-align: left;
-  line-height: 2;
-  padding-bottom: 100px;
+  color: #000;
+  transition: 0.4s ease;
 }
 
-/* Image Section */
+.skill-row:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 0 25px rgba(0,255,255,0.3);
+}
 
-.skill-img {
-  width: 25%;
-  float: left;
-  margin-right: 20px;
+.skill-img, .work-img {
+  width: 22%;
+  filter: drop-shadow(0 0 10px #00acc1);
 }
 
 .tech-stack {
   width: 50px;
-  padding-right: 10px;
+  margin: 10px 5px;
+  transition: 0.3s ease;
 }
 
-.work-img {
-  width: 25%;
-  float: right;
-  margin-left: 20px;
+.tech-stack:hover {
+  transform: scale(1.2);
 }
 
-/* Contact Me Section */
+/* =============================
+   CONTACT SECTION
+   ============================= */
+
 .contact-me {
-  background-color: #000000;
-  padding: 100px 0px;
+  background-color: #000;
+  padding: 120px 0;
+  color: white;
 }
 
 .contact-message {
-  width: 40%;
-  margin: 40px auto 60px;
+  width: 45%;
+  margin: 30px auto;
 }
 
-
-/* Bottom Section */
-.bottom-container {
-  background-image: linear-gradient(to bottom, #00122e, #0064c2);
-  padding:20px 20px 10px 20px;
+.Contact-button {
+  border-radius: 12px;
+  transition: 0.4s ease;
+  font-size: 1.3rem;
 }
 
-.bottom-container a {
-  text-decoration: none;
-  margin-right: 30px;
-  font-weight: bold;
+.Contact-button:hover {
+  background: linear-gradient(to right, #00c6ff, #004a9f);
+  box-shadow: 0 0 20px #009dff;
 }
 
-.bottom-container p {
-  margin-top: 10px;
+.Contact-button a {
   color: white;
+  text-decoration: none;
+}
 
+/* =============================
+   FOOTER
+   ============================= */
+
+.bottom-container {
+  background: linear-gradient(to top, #001427, #003d7a);
+  padding: 30px;
 }
 
 .footer-link img {
-  margin: 10px 0px;
-  text-align: center;
-  width: 30px;
+  width: 35px;
+  margin: 10px 20px;
+  transition: 0.3s;
 }
 
-.bottom-container img:hover {
-  width: 2.4%;
+.footer-link img:hover {
+  transform: scale(1.25);
+  filter: drop-shadow(0 0 10px #00eaff);
 }
 
-a {
-  text-decoration: none;
-}
-
-.contact-me button:hover {
-  background: linear-gradient(to bottom, #0064c2, #00122e);
-  
-
-}
-.contact-me button a:hover {
-  color: white;
-  
+.bottom-container p {
+  color: #fff;
+  margin-top: 15px;
+  opacity: 0.7;
 }
