@@ -33,6 +33,25 @@
 </head>
 
 <body>
+<div class="view-cursor">
+  <div class="view-cursor-inner">
+    <i class="fa-solid fa-eye"></i>
+  </div>
+  <svg class="view-text" viewBox="0 0 200 200">
+    <defs>
+      <path id="circlePath"
+        d="M100,100
+           m-75,0
+           a75,75 0 1,1 150,0
+           a75,75 0 1,1 -150,0"/>
+    </defs>
+    <text>
+      <textPath href="#circlePath">
+        LIVE NOW • CLICK HERE •
+      </textPath>
+    </text>
+  </svg>
+</div>
 
 <nav class="navbar-glass glass-card">
   <div class="nav-inner">
@@ -45,11 +64,19 @@
   </div>
 </nav>
 
+
 <section class="work-section" id="projects">
+<div class="blobs">
+  <span class="blob one"></span>
+  <span class="blob two"></span>
+  <span class="blob three"></span>
+</div>
+
+
   <h2 class="section-title">Curated <span class="edit-word">work</span></h2>
 
   <!-- Project 01 -->
-  <a href="projects.html" class="work-item">
+  <a href="https://suhas-raut.github.io/Portfolio-Website/" class="work-item">
     <div class="work-left">
       <h3 class="work-title">Pathfinding Visualizer</h3>
  <ul class="sparkle-list">
@@ -108,7 +135,7 @@
   </a>
 
   <!-- Project 02 -->
-  <a href="projects.html" class="work-item">
+  <a href="https://suhas-raut.github.io/sorting-visualizer-react/" class="work-item">
     <div class="work-left">
       <h3 class="work-title">Sorting Visualizer</h3>
       <p class="work-desc">
@@ -151,7 +178,7 @@
   </a>
 
   <!-- Project 03 -->
-  <a href="projects.html" class="work-item">
+  <a href="https://github.com/Suhas-Raut/ChessEngine-ML" class="work-item">
     <div class="work-left">
       <h3 class="work-title">Chess ML Engine</h3>
       <p class="work-desc">
@@ -193,3 +220,6 @@
     </div>
   </a>
 </section>
+<script src="script.js"></script>
+</body>
+</html>

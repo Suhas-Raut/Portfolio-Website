@@ -352,7 +352,7 @@ a:hover, button:hover {
 /* Projects Section */
 .projects {
   padding: 100px 20px;
-  background: radial-gradient(circle, #000000, #000000);
+  background: radial-gradient(circle, #00000000, #00000000);
   color: var(--text-primary);
 }
 
@@ -446,7 +446,7 @@ a:hover, button:hover {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
   gap: 60px;
-  padding: 0px 0;
+  padding: 00px 0;
   margin-bottom: 20px;
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
@@ -945,17 +945,6 @@ background: linear-gradient(180deg, rgba(255, 79, 79, 1) 0%, rgba(255, 0, 123, 1
   font-size: clamp(2.5rem, 5vw, 3.5rem);
 }
 
-
-
-
-
-
-
-
-
-
-
-
 @layer demo.support {
   h1 {
     font-size: 10vmin;
@@ -1003,437 +992,122 @@ background: linear-gradient(180deg, rgba(255, 79, 79, 1) 0%, rgba(255, 0, 123, 1
 /* =============================
    END OF FILE
    ============================= */
-/*
- Blob Container 
-============================= */
- 
-        :root {
-            --bg-primary: #f8fafc;
-            --card-bg: #ffffff;
-            --text-primary: #1e293b;
-            --text-secondary: #64748b;
-            --accent-blue: #3b82f6;
-            --accent-green: #10b981;
-            --accent-purple: #8b5cf6;
-            --accent-pink: #ec4899;
-            --accent-yellow: #f59e0b;
-            --border-color: #e2e8f0;
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
+/* FLOATING BACKGROUND BLOBS */
+.blobs {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: -1;
+  pointer-events: none;
+  filter: blur(60px);
+}
+.blob {
+  position: absolute;
+  width: 70vmax;
+  height: 70vmax;
 
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --bg-primary: #0f172a;
-                --card-bg: #1e293b;
-                --text-primary: #f1f5f9;
-                --text-secondary: #94a3b8;
-                --border-color: #334155;
-            }
-        }
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(56,189,248,0.55),
+    rgba(56,189,248,0.15) 45%,
+    transparent 70%
+  );
 
-      
+  border-radius: 40% 60% 55% 45% / 50% 45% 55% 50%;
+  opacity: 0.35;
 
-        .blob-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 200%;
-            overflow: hidden;
-            z-index: 0;
-            opacity: 0.4;
-            filter: blur(40px);
-        }
+  animation: drift 220s ease-in-out infinite alternate,
+             morph 90s ease-in-out infinite;
+}
+.blob.one {
+  top: -20%;
+  left: -20%;
+  background: radial-gradient(circle, #38bdf8, transparent 60%);
+}
 
-        .blob {
-            position: absolute;
-            border-radius: 50%;
-            opacity: 0.5;
-            transition: transform 40s ease-in-out;
-        }
+.blob.two {
+  top: 40%;
+  left: 60%;
+  background: radial-gradient(circle, #8b5cf6, transparent 60%);
+  animation-duration: 260s, 110s;
+}
 
-        .blob-1 {
-            width: 300px;
-            height: 300px;
-            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
-            top: -150px;
-            left: -150px;
-            animation: pulse1 25s infinite alternate, move1 45s infinite linear;
-        }
+.blob.three {
+  top: 80%;
+  left: -10%;
+  background: radial-gradient(circle, #22d3ee, transparent 60%);
+  animation-duration: 300s, 130s;
+}
+@keyframes morph {
+  0% {
+    border-radius: 40% 60% 55% 45% / 50% 45% 55% 50%;
+  }
+  50% {
+    border-radius: 55% 45% 40% 60% / 60% 40% 60% 40%;
+  }
+  100% {
+    border-radius: 45% 55% 60% 40% / 45% 55% 45% 55%;
+  }
+}
 
-        .blob-2 {
-            width: 250px;
-            height: 250px;
-            background: linear-gradient(135deg, var(--accent-green), var(--accent-blue));
-            bottom: -100px;
-            right: -100px;
-            animation: pulse2 22s infinite alternate, move2 45s infinite linear;
-        }
+/* ===============================
+   VIEW DETAILS GLASS CURSOR
+   =============================== */
 
-        .blob-3 {
-            width: 200px;
-            height: 200px;
-            background: linear-gradient(135deg, var(--accent-pink), var(--accent-purple));
-            top: 60%;
-            left: 30%;
-            animation: pulse3 28s infinite alternate, move3 45s infinite linear;
-        }
+.view-cursor {
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.25s ease;
+}
 
-        .blob-4 {
-            width: 220px;
-            height: 220px;
-            background: linear-gradient(135deg, var(--accent-yellow), var(--accent-pink));
-            top: 20%;
-            right: 10%;
-            animation: pulse4 24s infinite alternate, move4 50s infinite linear;
-        }
+/* Glass circle */
+.view-cursor-inner {
+  position: absolute;
+  inset: 25px;
+  border-radius: 50%;
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-        @keyframes pulse1 {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.5); }
-        }
+.view-cursor-inner i {
+  color: white;
+  font-size: 28px;
+}
 
-        @keyframes pulse2 {
-            0% { transform: scale(1.1); }
-            100% { transform: scale(3.9); }
-        }
+/* Rotating text */
+.view-text {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  inset: 50px;
+  border-radius: 50%;
+  display: flex;
+  animation: rotateText 100s ease-in infinite;
+}
 
-        @keyframes pulse3 {
-            0% { transform: scale(0.9); }
-            100% { transform: scale(1.2); }
-        }
+.view-text text {
+  fill: white;
+  font-size: 24px;
+  letter-spacing: 6px;
+  font-family: Montserrat, sans-serif;
+}
 
-        @keyframes pulse4 {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.25); }
-        }
+@keyframes rotateText {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(6deg); }
+}
 
-        @keyframes move1 {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            33% { transform: translate(100px, 100px) rotate(120deg); }
-            66% { transform: translate(-50px, 150px) rotate(240deg); }
-            100% { transform: translate(0, 0) rotate(360deg); }
-        }
-
-        @keyframes move2 {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            33% { transform: translate(-120px, -80px) rotate(120deg); }
-            66% { transform: translate(70px, -120px) rotate(240deg); }
-            100% { transform: translate(0, 0) rotate(360deg); }
-        }
-
-        @keyframes move3 {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            33% { transform: translate(80px, -100px) rotate(120deg); }
-            66% { transform: translate(-120px, -60px) rotate(240deg); }
-            100% { transform: translate(0, 0) rotate(360deg); }
-        }
-
-        @keyframes move4 {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            33% { transform: translate(-90px, 80px) rotate(120deg); }
-            66% { transform: translate(100px, 50px) rotate(240deg); }
-            100% { transform: translate(0, 0) rotate(360deg); }
-        }
-
-        .dashboard {
-            position: relative;
-            z-index: 10;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            padding: 24px;
-            gap: 20px;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-bottom: 16px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .logo {
-            font-weight: 700;
-            font-size: 22px;
-            color: var(--text-primary);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .logo-icon {
-            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
-            width: 24px;
-            height: 24px;
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .date-selector {
-            display: flex;
-            gap: 8px;
-            align-items: center;
-            font-size: 14px;
-            background-color: var(--card-bg);
-            padding: 8px 12px;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-sm);
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .date-selector:hover {
-            box-shadow: var(--shadow-md);
-            transform: translateY(-1px);
-        }
-
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
-        }
-
-        .card {
-            background-color: var(--card-bg);
-            border-radius: 12px;
-            padding: 16px;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card:hover {
-            box-shadow: var(--shadow-md);
-            transform: translateY(-2px);
-        }
-
-        .card-label {
-            font-size: 14px;
-            color: var(--text-secondary);
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .card-value {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .card-trend {
-            font-size: 12px;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .positive {
-            color: var(--accent-green);
-        }
-
-        .negative {
-            color: var(--accent-pink);
-        }
-
-        .chart-container {
-            grid-column: 1 / -1;
-            height: 240px;
-            position: relative;
-        }
-
-        .chart {
-            width: 100%;
-            height: 100%;
-            position: relative;
-        }
-
-        .chart-labels {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 8px;
-            font-size: 12px;
-            color: var(--text-secondary);
-        }
-
-        .chart-legend {
-            display: flex;
-            gap: 16px;
-            margin-top: 8px;
-            font-size: 12px;
-        }
-
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .legend-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-        }
-
-        .dot-users {
-            background-color: var(--accent-blue);
-        }
-
-        .dot-sessions {
-            background-color: var(--accent-purple);
-        }
-
-        .tab-container {
-            display: flex;
-            gap: 2px;
-            background-color: rgba(0, 0, 0, 0.03);
-            padding: 4px;
-            border-radius: 8px;
-            margin-bottom: 16px;
-        }
-
-        .tab {
-            padding: 8px 16px;
-            font-size: 14px;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            text-align: center;
-            flex: 1;
-        }
-
-        .tab.active {
-            background-color: var(--card-bg);
-            box-shadow: var(--shadow-sm);
-            font-weight: 500;
-        }
-
-        .tab:not(.active):hover {
-            background-color: rgba(0, 0, 0, 0.02);
-        }
-
-        .metric-row {
-            display: flex;
-            gap: 16px;
-            margin-top: 16px;
-        }
-
-        .metric {
-            background-color: var(--card-bg);
-            border-radius: 8px;
-            padding: 12px;
-            flex: 1;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-        }
-        
-        .metric:hover {
-            box-shadow: var(--shadow-md);
-            transform: translateY(-2px);
-        }
-
-        .metric-label {
-            font-size: 13px;
-            color: var(--text-secondary);
-            margin-bottom: 4px;
-        }
-
-        .metric-value {
-            font-size: 20px;
-            font-weight: 600;
-        }
-
-        /* Chart lines */
-        .data-line {
-            fill: none;
-            stroke-width: 2;
-            stroke-linecap: round;
-        }
-
-        .users-line {
-            stroke: var(--accent-blue);
-        }
-
-        .sessions-line {
-            stroke: var(--accent-purple);
-        }
-
-        .area {
-            opacity: 0.1;
-        }
-
-        .users-area {
-            fill: var(--accent-blue);
-        }
-
-        .sessions-area {
-            fill: var(--accent-purple);
-        }
-
-        .tooltip {
-            position: absolute;
-            background-color: var(--card-bg);
-            border-radius: 6px;
-            padding: 8px 12px;
-            box-shadow: var(--shadow-md);
-            font-size: 12px;
-            pointer-events: none;
-            opacity: 0;
-            transition: opacity 0.2s;
-            border: 1px solid var(--border-color);
-            z-index: 100;
-        }
-
-        .tooltip-date {
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-
-        .tooltip-value {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .tooltip-dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-        }
-
-        @media (max-width: 600px) {
-            .card-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .metric-row {
-                flex-direction: column;
-                gap: 12px;
-            }
-            
-            .card-value {
-                font-size: 24px;
-            }
-            
-            .chart-container {
-                height: 200px;
-            }
-            
-            .dashboard {
-                padding: 16px;
-            }
-        }
+/* Show only on project cards */
+.work-item:hover ~ .view-cursor {
+  opacity: 1;
+}
