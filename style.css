@@ -3,18 +3,6 @@
    ============================= */
 
 :root {
-<<<<<<< HEAD
-  --primary: #66bfbf;
-  --secondary: #000000;
-  --dark-bg: #0b1f29;
-  --glass-bg: rgba(255, 255, 255, 0.07);
-  --glass-border: rgba(255, 255, 255, 0.15);
-  --new:rgb(255, 255, 255);
-  --glow-cyan: #00eaff;
-  --glow-blue: #00c6ff;
-}
-
-=======
   /* Core */
   --bg-main: #000000;
   --bg-secondary: #111827;
@@ -49,14 +37,7 @@ html {
 }
 
 body {
-<<<<<<< HEAD
-  text-align: center;
-  font-family: "Merriweather", serif;
-  background-color: #0a192f;
-  color: var(--primary);
-  overflow-x: hidden;
-}
-=======
+
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
                "Inter", sans-serif;
   background: radial-gradient(
@@ -114,20 +95,7 @@ body {
   animation: subtleFloat 10s ease-in-out infinite;
 }
 
-<<<<<<< HEAD
-.orb1 {
-  background: var(--glow-blue);
-  top: 10%;
-  left: 5%;
-}
 
-.orb2 {
-  background: var(--glow-cyan);
-  bottom: 5%;
-  right: 8%;
-  animation-delay: 3s;
-}
-=======
 
 >>>>>>> e993a17 (Files Added)
 
@@ -136,35 +104,7 @@ body {
    ============================= */
 
 h1 {
-<<<<<<< HEAD
-  font-size: 5rem;
-  font-family: "Great Vibes", cursive;
-  color: var(--primary);
-  animation: glowText 3s ease infinite alternate;
-}
 
-@keyframes glowText {
-  from { text-shadow: 0 0 12px #5fffff; }
-  to { text-shadow: 0 0 30px #00eaff; }
-}
-
-h2 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 2.8rem;
-  font-weight: 500;
-  color: var(--primary);
-}
-
-a, p {
-  font-family: "Montserrat", sans-serif;
-  color: var(--new);
-  font-weight: 600;
-}
-h3, h4 {
-  font-family: "Montserrat", sans-serif;
-  color: var(--secondary);
-  font-weight: 600;
-=======
   font-size: clamp(3rem, 6vw, 5rem);
   font-weight: 600;
   letter-spacing: -0.02em;
@@ -200,92 +140,7 @@ a:hover, button:hover {
    NAVBAR
    ============================= */
 
-<<<<<<< HEAD
-.navbar {
-  position: fixed;               /* stays at top */
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 999;
-  
-  padding: 0.8rem 8%;            /* reduced padding */
-  
-  backdrop-filter: blur(14px);
-  background: rgba(10, 25, 47, 0.65);
-  border-bottom: 1px solid rgba(255,255,255,0.1);
 
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-}
-
-.navbar-brand {
-  font-size: 2rem;
-  color: var(--primary) !important;
-  letter-spacing: 1px;
-  transition: 0.3s ease;
-}
-
-.navbar-brand:hover {
-  transform: scale(1.1);
-  text-shadow: 0 0 15px var(--glow-cyan);
-}
-
-.nav-link {
-  color: var(--primary) !important;
-  font-size: 1.2rem;
-  margin: 0 10px;
-  transition: 0.3s;
-}
-
-.nav-item a:hover,
-.nav-item a.active {
-  background: linear-gradient(to right, #00c6ff, #0072ff);
-  padding: 6px 16px;
-  border-radius: 10px;
-  color: #fff !important;
-  box-shadow: 0 0 12px var(--glow-cyan);
-}
-
-/* =============================
-   HERO SECTION (Clean, modern)
-   ============================= */
-
-.container-fluid {
-  position: relative;
-  padding-top: 110px;
-  padding-bottom: 60px;
-  background: radial-gradient(circle at top, #05232e, #00111a);
-}
-
-/* REMOVED CLOUD STYLES COMPLETELY */
-
-/* =============================
-   PROFILE SECTION
-   ============================= */
-
-.middle-container {
-  background: linear-gradient(to bottom, #000000, #eca820);
-}
-
-.profile {
-  padding: 90px 0;
-  background: linear-gradient(to bottom, #0d4030, #082418);
-  color: white;
-  position: relative;
-}
-
-.profile img {
-  border-radius: 50%;
-  width: 200px;
-  border: 4px solid var(--primary);
-  box-shadow: 0 0 30px var(--glow-cyan);
-  transition: 0.4s;
-}
-
-.profile img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 45px var(--glow-blue);
-}
-=======
 /* =============================
    FLOATING CENTER NAVBAR
    ============================= */
@@ -352,10 +207,7 @@ a:hover, button:hover {
 /* =============================
    SKILLS SECTION
    ============================= */
-<<<<<<< HEAD
 
-.skills {
-  padding: 60px 0 80px;
 =======
 .row{
   display: flex;
@@ -397,11 +249,7 @@ a:hover, button:hover {
   transform: translateY(-8px) scale(1.03);
   box-shadow: 0 0 30px rgba(0,255,255,0.3);
 }
-<<<<<<< HEAD
 
-.skill-img, .work-img {
-  width: 22%;
-  filter: drop-shadow(0 0 10px #00acc1);
 =======
 .Skill-text{
     margin-top: 20px;
@@ -438,8 +286,7 @@ a:hover, button:hover {
   transform: scale(1.2);
 }
 
-<<<<<<< HEAD
-=======
+
 
 >>>>>>> e993a17 (Files Added)
 /* =============================
@@ -447,11 +294,6 @@ a:hover, button:hover {
    ============================= */
 
 .contact-me {
-<<<<<<< HEAD
-  background-color: #000;
-  padding: 130px 0;
-  color: white;
-=======
   /* background-color: #000; */
     background: linear-gradient(to top, #003d7a, #3f74be );
   padding: 130px 0;
@@ -463,8 +305,6 @@ a:hover, button:hover {
 .contact-message {
   width: 45%;
   margin: 30px auto;
-<<<<<<< HEAD
-=======
 
 >>>>>>> e993a17 (Files Added)
 }
@@ -492,8 +332,6 @@ a:hover, button:hover {
 .bottom-container {
   background: linear-gradient(to top, #001427, #003d7a);
   padding: 30px;
-<<<<<<< HEAD
-=======
   text-align: center;
 >>>>>>> e993a17 (Files Added)
 }
@@ -514,8 +352,7 @@ a:hover, button:hover {
   opacity: 0.7;
   margin-top: 20px;
 }
-<<<<<<< HEAD
-=======
+
 
 
 /* Projects Section */
