@@ -25,7 +25,6 @@
 }
 
 
->>>>>>> e993a17 (Files Added)
 * {
   margin: 0;
   padding: 0;
@@ -37,7 +36,6 @@ html {
 }
 
 body {
-
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
                "Inter", sans-serif;
   background: radial-gradient(
@@ -59,7 +57,6 @@ body {
 }
 
 
->>>>>>> e993a17 (Files Added)
 
 /* =============================
    ANIMATIONS
@@ -97,14 +94,11 @@ body {
 
 
 
->>>>>>> e993a17 (Files Added)
-
 /* =============================
    HEADINGS
    ============================= */
 
 h1 {
-
   font-size: clamp(3rem, 6vw, 5rem);
   font-weight: 600;
   letter-spacing: -0.02em;
@@ -133,13 +127,11 @@ a:hover, button:hover {
 
 * {
   animation-duration: 0.8s !important;
->>>>>>> e993a17 (Files Added)
 }
 
 /* =============================
    NAVBAR
    ============================= */
-
 
 /* =============================
    FLOATING CENTER NAVBAR
@@ -202,13 +194,10 @@ a:hover, button:hover {
   color: var(--accent);
 }
 
->>>>>>> e993a17 (Files Added)
 
 /* =============================
    SKILLS SECTION
    ============================= */
-
-=======
 .row{
   display: flex;
   align-items: center;
@@ -230,7 +219,6 @@ a:hover, button:hover {
 .skills {
   text-align: center;
   padding-top: 100px;
->>>>>>> e993a17 (Files Added)
 }
 
 .skill-row {
@@ -249,8 +237,6 @@ a:hover, button:hover {
   transform: translateY(-8px) scale(1.03);
   box-shadow: 0 0 30px rgba(0,255,255,0.3);
 }
-
-=======
 .Skill-text{
     margin-top: 20px;
     margin-bottom: 20px;
@@ -273,7 +259,6 @@ a:hover, button:hover {
   width: 100%;
   height: auto;
   filter: drop-shadow(0 0 10px #008ac1);
->>>>>>> e993a17 (Files Added)
 }
 
 .tech-stack {
@@ -287,8 +272,6 @@ a:hover, button:hover {
 }
 
 
-
->>>>>>> e993a17 (Files Added)
 /* =============================
    CONTACT SECTION
    ============================= */
@@ -299,14 +282,12 @@ a:hover, button:hover {
   padding: 130px 0;
   color: white;
   text-align: center;
->>>>>>> e993a17 (Files Added)
 }
 
 .contact-message {
   width: 45%;
   margin: 30px auto;
 
->>>>>>> e993a17 (Files Added)
 }
 
 .Contact-button {
@@ -333,7 +314,6 @@ a:hover, button:hover {
   background: linear-gradient(to top, #001427, #003d7a);
   padding: 30px;
   text-align: center;
->>>>>>> e993a17 (Files Added)
 }
 
 .footer-link img {
@@ -352,7 +332,6 @@ a:hover, button:hover {
   opacity: 0.7;
   margin-top: 20px;
 }
-
 
 
 /* Projects Section */
@@ -1431,4 +1410,3 @@ background: linear-gradient(180deg, rgba(255, 79, 79, 1) 0%, rgba(255, 0, 123, 1
                 padding: 16px;
             }
         }
->>>>>>> e993a17 (Files Added)
