@@ -30,3 +30,49 @@ projectItems.forEach(item => {
     viewCursor.style.opacity = "0";
   });
 });
+const track = document.getElementById("projectTrack");
+let slides = document.querySelectorAll(".project-card-new");
+
+let index = 0;
+const gap = 40;
+
+// Clone first and last slides for seamless loop
+const firstClone = slides[0].cloneNode(true);
+const secondClone = slides[1].cloneNode(true);
+const lastClone = slides[slides.length - 1].cloneNode(true);
+
+track.appendChild(firstClone);
+track.appendChild(secondClone);
+track.insertBefore(lastClone, slides[0]);
+
+slides = document.querySelectorAll(".project-card-new");
+
+// Start from first real slide
+const slideWidth = slides[0].offsetWidth + gap;
+track.style.transform = `translateX(-${slideWidth}px)`;
+index = 1;
+
+function autoSlide() {
+  index++;
+  track.style.transition = "transform 0.7s ease";
+  track.style.transform = `translateX(-${index * slideWidth}px)`;
+}
+
+setInterval(autoSlide, 3000);
+
+track.addEventListener("transitionend", () => {
+  if (index >= slides.length - 2) {
+    track.style.transition = "none";
+    index = 1;
+    track.style.transform = `translateX(-${slideWidth}px)`;
+  }
+
+  if (index === 0) {
+    track.style.transition = "none";
+    index = slides.length - 3;
+    track.style.transform = `translateX(-${index * slideWidth}px)`;
+  }
+});
+
+
+

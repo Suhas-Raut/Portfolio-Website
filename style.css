@@ -1114,6 +1114,114 @@ background: linear-gradient(180deg, rgba(255, 79, 79, 1) 0%, rgba(255, 0, 123, 1
   opacity: 1;
 }
 
+/* ===============================
+   PROJECT SHOWCASE (NEW CLEAN)
+   =============================== */
+
+.project-showcase {
+  padding: 120px 8%;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.project-header h2 {
+  font-family: "Instrument Serif", serif;
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+.project-header p {
+  opacity: 0.7;
+  margin-top: 10px;
+}
+
+/* Slider Wrapper */
+.project-slider {
+  
+  overflow: hidden;
+}
+
+/* Sliding Track */
+.project-track {
+  display: flex;
+  gap: 40px;
+  transition: transform 0.7s ease;
+}
+
+/* Card */
+.project-card-new {
+  min-width: 420px;
+  max-width: 420px;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: 0.4s ease;
+}
+
+.project-card-new:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px rgba(56,189,248,0.4);
+}
+
+.project-card-new img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+/* Content */
+.project-content {
+  padding: 25px;
+}
+
+.project-content h3 {
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+}
+
+.project-content p {
+  font-size: 0.95rem;
+  opacity: 0.75;
+}
+
+/* Buttons */
+.project-buttons {
+  margin-top: 18px;
+  display: flex;
+  gap: 12px;
+}
+
+.project-buttons a {
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  text-decoration: none;
+  border: 1px solid white;
+  transition: 0.3s ease;
+}
+
+.project-buttons a:hover {
+  background: white;
+  color: black;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .project-card-new {
+    min-width: 300px;
+    max-width: 300px;
+  }
+}
+
+
 /* =============================
    END OF FILE
    ============================= */
